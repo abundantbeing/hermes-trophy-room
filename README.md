@@ -166,4 +166,4 @@ The 60 original achievements (ids, names, descriptions, thresholds) come from [h
 
 This is an unofficial community plugin. Hermes and Nous Research belong to their owners. The achievement artwork is original.
 
-MIT licence, see [LICENSE](LICENSE).
+MIT licence, see [LICENSE](LICENSE) and [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
