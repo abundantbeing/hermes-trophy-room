@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Trophy Room harness</title>
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="./harness.css">
+<script type="importmap">
+{
+  "imports": {
+    "@hermes/plugin-sdk": "/tests/harness/sdk-stub.js",
+    "react": "https://esm.sh/react@18.3.1",
+    "react/jsx-runtime": "https://esm.sh/react@18.3.1/jsx-runtime",
+    "react-dom": "https://esm.sh/react-dom@18.3.1?deps=react@18.3.1",
+    "react-dom/client": "https://esm.sh/react-dom@18.3.1/client?deps=react@18.3.1"
+  }
+}
+</script>
+</head>
+<body>
+<div id="root"></div>
+<script type="module" src="./shell.js"></script>
+</body>
+</html>

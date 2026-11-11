@@ -1,0 +1,7 @@
+{
+  "name": "trophy-room",
+  "label": "Trophy Room",
+  "description": "Backend for the Trophy Room Desktop plugin: progress, unlocks, art.",
+  "version": "0.1.0",
+  "api": "plugin_api.py"
+}

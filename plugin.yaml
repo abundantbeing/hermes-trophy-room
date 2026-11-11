@@ -1,0 +1,22 @@
+name: trophy-room
+version: "0.1.0"
+manifest_version: 2
+description: >-
+  Achievements for Hermes Desktop. 120 illustrated trophies earned from real Hermes work (tools,
+  skills, profiles, cron, plugins, messaging, kanban, media), collectible cards with five tiers,
+  animated unlock pop-ups with a synth sting, and optional OS notifications.
+author: abundantbeing
+license: MIT
+homepage: https://github.com/abundantbeing/hermes-trophy-room
+requires_hermes: ">=0.22.0"
+tags: [desktop, achievements, gamification, notifications]
+provides_hooks:
+  - post_tool_call
+  - on_session_start
+  - on_session_end
+  - post_llm_call
+  - post_compaction
+  - kanban_task_completed
+  - kanban_task_claimed
+  - kanban_task_blocked
+  - gateway_platform_event

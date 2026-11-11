@@ -1,0 +1,65 @@
+/* Harness-only styles: a fake Hermes shell plus stand-ins for the UI kit. Colours are the app's CSS variables. */
+:root{color-scheme:dark}
+*{box-sizing:border-box}
+html,body,#root{margin:0;height:100%;background:#050510;font:12px/1.4 Inter,system-ui,sans-serif}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+.hw{--ui-text-primary:#E6E6EF;--ui-text-secondary:rgba(230,230,239,.75);--ui-text-tertiary:rgba(230,230,239,.55);--ui-stroke-secondary:rgba(230,230,239,.14);--ui-bg-quaternary:rgba(255,255,255,.04);--ui-bg-tertiary:rgba(255,255,255,.07);--ui-bg-chrome:#0E0E22;--ui-bg-elevated:#1A1A36;--ui-accent:#8585F9;--chrome-action-hover:rgba(255,255,255,.07);--w-bg:#12122A;--font-mono:'IBM Plex Mono',ui-monospace,monospace;
+  position:relative;display:grid;grid-template-rows:34px 1fr 24px;width:100%;height:100%;background:var(--w-bg);color:var(--ui-text-primary);overflow:hidden}
+.hw[data-theme=light]{--ui-text-primary:#19192F;--ui-text-secondary:rgba(25,25,47,.75);--ui-text-tertiary:rgba(25,25,47,.55);--ui-stroke-secondary:rgba(25,25,47,.14);--ui-bg-quaternary:rgba(25,25,47,.04);--ui-bg-tertiary:rgba(25,25,47,.07);--ui-bg-chrome:#F0F0F8;--ui-bg-elevated:#fff;--ui-accent:#0000F2;--chrome-action-hover:rgba(25,25,47,.07);--w-bg:#FAFAFF;color-scheme:light}
+.hw-tb{display:flex;align-items:center;gap:8px;padding:0 10px;border-bottom:1px solid var(--ui-stroke-secondary);background:var(--ui-bg-chrome);position:relative}
+.hw-dots{display:flex;gap:5px;margin-right:6px}.hw-dots i{width:10px;height:10px;border-radius:50%;background:var(--ui-stroke-secondary)}
+.hw-cluster{display:flex;align-items:center;gap:2px;height:100%}
+.hw-title{position:absolute;left:50%;transform:translateX(-50%);color:var(--ui-text-tertiary);font:500 10px var(--font-mono);letter-spacing:.14em;text-transform:uppercase;pointer-events:none}
+.hw-body{display:grid;grid-template-columns:176px 1fr;min-height:0}
+.hw-side{background:var(--ui-bg-chrome);border-right:1px solid var(--ui-stroke-secondary);padding:10px 8px;display:flex;flex-direction:column;gap:2px;overflow:hidden}
+.hw-nav{display:flex;align-items:center;gap:8px;padding:6px 8px;border:0;background:none;color:var(--ui-text-primary);border-radius:3px;text-align:left;font:inherit;cursor:pointer;opacity:.85;white-space:nowrap}
+.hw-nav:hover,.hw-nav.on{background:var(--chrome-action-hover);opacity:1}
+.hw-lab{font:500 9px var(--font-mono);letter-spacing:.14em;color:var(--ui-accent);text-transform:uppercase;margin:12px 8px 4px}
+.hw-main{position:relative;min-width:0;min-height:0;overflow:hidden;display:flex;flex-direction:column}
+.hw-chat{flex:1;padding:18px 8% 8px;display:flex;flex-direction:column;gap:12px}
+.hw-msg{max-width:78%;padding:9px 12px;border-radius:3px;background:var(--ui-bg-elevated);border:1px solid var(--ui-stroke-secondary)}
+.hw-msg.me{align-self:flex-end;background:var(--ui-bg-tertiary)}
+.hw-comp{margin:0 8% 12px;border:1px solid var(--ui-stroke-secondary);border-radius:3px;padding:10px 12px;color:var(--ui-text-tertiary);background:var(--ui-bg-elevated)}
+.hw-sb{display:flex;align-items:center;justify-content:space-between;border-top:1px solid var(--ui-stroke-secondary);background:var(--ui-bg-chrome);color:var(--ui-text-tertiary);font:500 10px var(--font-mono);letter-spacing:.05em;padding:0 10px}
+.hw-sb .hw-cluster{gap:12px}
+.hw-toasts{position:absolute;top:40px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;gap:6px;z-index:60;pointer-events:none}
+.hw-toast{background:var(--ui-bg-elevated);border:1px solid var(--ui-stroke-secondary);padding:8px 12px;border-radius:3px;box-shadow:0 8px 30px rgba(0,0,0,.4)}
+.hw-set{display:grid;grid-template-columns:200px 1fr;height:100%;min-height:0}
+.hw-rail{border-right:1px solid var(--ui-stroke-secondary);padding:14px 10px;display:flex;flex-direction:column;gap:2px;overflow:auto}
+.hw-rail button{border:0;background:none;color:var(--ui-text-secondary);padding:6px 8px;border-radius:3px;text-align:left;font:inherit;cursor:pointer}
+.hw-rail button.on{background:var(--ui-bg-tertiary);color:var(--ui-text-primary)}
+.hw-rail .sub{padding-left:20px}
+.hw-setbody{overflow:auto;min-height:0}
+/* ui kit stand-ins */
+.hb-btn{font:500 12px/16px Inter,system-ui,sans-serif;border:0;border-radius:2.5px;padding:5px 12px;cursor:pointer;color:var(--ui-text-primary);background:var(--ui-bg-quaternary)}
+.hb-btn-default{background:var(--ui-accent);color:#fff}
+.hb-btn-outline{background:transparent;box-shadow:inset 0 0 0 1px var(--ui-stroke-secondary)}
+.hb-btn-destructive{background:#c43;color:#fff}
+.hb-btn:hover{filter:brightness(1.12)}.hb-btn:disabled{opacity:.45;cursor:default}
+.hb-btn-sm{padding:4px 10px}
+.hb-switch{width:36px;height:20px;border-radius:999px;border:1px solid var(--ui-stroke-secondary);background:var(--ui-bg-tertiary);padding:1px;cursor:pointer;display:inline-flex;align-items:center}
+.hb-switch span{width:16px;height:16px;border-radius:50%;background:var(--ui-text-primary);transition:transform .15s}
+.hb-switch[aria-checked=true]{background:var(--ui-accent);border-color:transparent}.hb-switch[aria-checked=true] span{transform:translateX(16px);background:#fff}
+.hb-seg{display:inline-grid;grid-auto-flow:column;gap:2px;background:var(--ui-bg-tertiary);padding:2px;border-radius:5px}
+.hb-seg button{border:0;background:none;color:var(--ui-text-secondary);font:500 11px Inter,system-ui,sans-serif;padding:3px 10px;border-radius:3px;cursor:pointer}
+.hb-seg button[aria-pressed=true]{background:var(--w-bg);color:var(--ui-text-primary);box-shadow:0 1px 2px rgba(0,0,0,.3)}
+.hb-search{display:flex;align-items:center;gap:6px;border-bottom:1px solid var(--ui-stroke-secondary);padding:3px 2px;color:var(--ui-text-tertiary)}
+.hb-search input{flex:1;background:none;border:0;outline:0;color:var(--ui-text-primary);font:inherit}
+.hb-popover{outline:0}
+.hb-overlay{position:fixed;inset:0;background:rgba(0,0,0,.4);display:grid;place-items:center;z-index:90}
+.hb-dialog{position:relative;background:var(--ui-bg-elevated,#1A1A36);color:var(--ui-text-primary);border:1px solid var(--ui-stroke-secondary);border-radius:6px;max-height:90vh;overflow:auto;--ui-text-primary:#E6E6EF;--ui-text-tertiary:rgba(230,230,239,.55);--ui-stroke-secondary:rgba(230,230,239,.14);--ui-accent:#8585F9;--ui-bg-quaternary:rgba(255,255,255,.04)}
+.hb-dialog-x{position:absolute;right:8px;top:6px;z-index:5;border:0;background:rgba(0,0,0,.4);color:#fff;border-radius:3px;cursor:pointer;width:22px;height:22px}
+.codicon{font-style:normal;display:inline-block;width:1em;text-align:center}
+.codicon-star-full::before{content:"\2605"}.codicon-search::before{content:"\2315"}
+/* control panel */
+.cp{position:fixed;right:12px;bottom:12px;z-index:200;width:290px;background:#0b0b1c;border:1px solid #333;border-radius:6px;color:#E6E6EF;font:11px/1.4 Inter,sans-serif;padding:10px;display:grid;gap:8px}
+.cp h5{margin:0;font:500 10px 'IBM Plex Mono',monospace;letter-spacing:.14em;text-transform:uppercase;color:#8585F9}
+.cp .r{display:flex;gap:6px;flex-wrap:wrap;align-items:center}
+.cp button,.cp select{background:#1a1a36;color:#E6E6EF;border:1px solid #333;border-radius:3px;padding:3px 8px;font:inherit;cursor:pointer}
+.cp button.on{background:#0000F2}
+.os-layer{position:fixed;right:14px;bottom:44px;display:grid;gap:8px;z-index:150;pointer-events:none}
+.os-toast{width:340px;background:#202020;color:#fff;border-radius:6px;padding:12px;box-shadow:0 12px 40px rgba(0,0,0,.5);font:13px/1.35 'Segoe UI',system-ui,sans-serif;display:grid;grid-template-columns:56px 1fr;gap:12px}
+.os-toast .ic{width:56px;height:56px;background:#0D0D24;border-radius:4px;display:grid;place-items:center;color:#888;font-size:9px;overflow:hidden}
+.os-toast .app{font-size:11px;color:#bbb}.os-toast .t{font-weight:600}.os-toast .b{color:#ddd;font-size:12px}
+/* Optional: the Desktop app's wordmark face. Copy Collapse-Bold.woff2 from your Hermes install into notes/fonts/ (ignored) to preview with it; without the file the plugin's serif fallback shows. */
+@font-face{font-family:'Collapse';font-weight:700;font-display:swap;src:url(/notes/fonts/Collapse-Bold.woff2) format('woff2')}
