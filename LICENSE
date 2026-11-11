@@ -2,11 +2,6 @@ MIT License
 
 Copyright (c) 2026 abundantbeing
 
-Portions of the achievement catalog (the 60 original achievement ids, names,
-descriptions and tier thresholds) are derived from hermes-achievements by
-@PCinkusz (https://github.com/PCinkusz/hermes-achievements), bundled with
-Hermes Agent, also MIT licensed.
-
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
 in the Software without restriction, including without limitation the rights
